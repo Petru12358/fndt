@@ -12,6 +12,7 @@ def print_Title(myString):
 	print colored ("Welcome and congratulations!The searching string:'" + start + myString + "'"+end + " was founded in lines: ", 'yellow')
 	
 if (len(sys.argv)==5 and sys.argv[1]=='-f'and sys.argv[3]=='-v'):
+
 	def searchString(fileName=sys.argv[2], myString=sys.argv[4]):
 		myFile = open(fileName)
 		print_Title(myString)
@@ -23,6 +24,10 @@ if (len(sys.argv)==5 and sys.argv[1]=='-f'and sys.argv[3]=='-v'):
 				line=line.replace(myString, termcolor.colored(Back.GREEN+start+myString+Style.RESET_ALL+end, 'red'))				
     				print l,line 
 				del l[0]
+			
+
+
+
 	searchString()
 	del sys.argv
 elif (len(sys.argv)==4 and sys.argv[1]=='-f'):
@@ -35,6 +40,7 @@ elif (len(sys.argv)==4 and sys.argv[1]=='-f'):
         		if myString in line:
         	    		l.append(n)
     		print l
+
 	searchString1()
 	del sys.argv
 	
@@ -49,6 +55,7 @@ elif(len(sys.argv)>1 and sys.argv[1]=='-v'):
 				line=line.replace(myString, termcolor.colored(Back.GREEN+start+myString+Style.RESET_ALL+end, 'red'))							
 				print l, line
 				del l[0]
+
 	search2()
 	del sys.argv
 else:
@@ -59,7 +66,10 @@ else:
         		n+=1
         		if myString in line:
         	    		l.append(n)
-		print l
+
+    		print l
+
+
 	search3()
 	del sys.argv
 
